@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% load embed_video_tags %}
+
+{% block content %}
+
+<h1 align="center">Fertilizers</h1>
+<hr>
+<center>
+{% for x in stock4 %}
+        {% if x.category == 'fertilizers' %}
+
+          <img src="{% static 'Images/logo.png' %}" alt="..." class="rounded-circle" width="50" height="50">
+          Pol Agro Krishi Gyan<br>
+          <div class="card" style="width: 40rem;">
+           {% video x.video as my_video %}
+                      {% video my_video "medium" %}
+           {% endvideo %}
+              <div class="card-body">
+                <h5 class="card-title">{{x.product_name}}</h5>
+                <p class="card-text" align="justify">{{x.product_describe}}</p>
+              </div>
+          </div>
+    {% if user.is_superuser%}
+    <center>
+       <a href="update/{{x.id}}" class="btn btn-warning" id = '{{x.id}}'>edit</a>
+      <a href="delete/{{x.id}}" class="btn btn-danger" id = '{{x.product_id}}'>delete</a>
+    </center>
+    {% endif %}
+<hr>
+        {% endif %}
+
+{% endfor %}
+
+</center>
+
+{% endblock %}

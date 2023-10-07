@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+{% block content %}
+<table class="table caption-top">
+    <caption style="color:red;"><b><center>List of users</center></b></caption>
+  <thead>
+    <tr>
+      <th scope="col">Username</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email Id</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in users %}
+    <tr>
+        <td>{{i.username}}</td>
+        <td>{{i.first_name}}</td>
+        <td>{{i.last_name}}</td>
+         <td>{{i.email}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+   <h2 class="card-title" align="center">About Us</h2>
+<center>
+<div class="card" style="width: 46rem;">
+  <img src="{% static 'Images/g5.jpg' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text" align="justify">Pol Traders is a retail and wholasale shope in Lasur station and Gangapur Aurangabad.
+        we provide seeds & plants, pesticides, traps, and fertilizers.
+        A seed is an embryonic plant enclosed in a protective outer covering.
+        The formation of the seed is part of the process of reproduction in seed plants,
+        the spermatophytes, including the gymnosperm and angiosperm plants.
+        Seeds are the product of the ripened ovule, after fertilization by pollen and some growth within the mother plant.
+        The embryo develops from the zygote, and the seed coat from the integuments of the ovule.
+        Seeds have been an important developmet
+        Pol Traders is a retail and wholasale shope in Lasur station and Gangapur Aurangabad.
+        we provide seeds & plants, pesticides, traps, and fertilizers.
+    </p>
+    <a href="{% url 'contact' %}" class="btn btn-primary" align="center">Contact us for more information</a>
+  </div>
+</div>
+ </center>
+{% endblock %}
